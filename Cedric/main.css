@@ -1,0 +1,92 @@
+:root {
+    --font-style: 'Akaya Telivigala', cursive;
+  }
+
+body {
+    background-color: rgb(134, 0, 67);
+    animation-name: color-change;
+    animation-duration: 5s;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+@keyframes color-change {
+    0% {
+        background-color: rgb(29, 29, 29);
+    }
+    50% {
+        background-color: rgb(88, 38, 45);
+    }
+    100% {
+        background-color: rgb(134, 0, 67)
+    }
+}
+
+#name {
+    font-family: var(--font-style);
+    font-size: 8vw;
+    position: absolute;
+    top: 12%;
+    left: 33%;
+    background: -webkit-linear-gradient(#eee, rgb(170, 92, 92), rgb(134, 0, 67));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#banner-img {
+    grid-area: header;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    border-color: black;
+    border-width: 8px;
+    border-style: solid;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    margin-bottom: 40px;
+}
+
+#profile-img {
+    border-color: snow;
+    border-width: 3px;
+    border-style: solid;
+    width: 15%;
+    border-radius: 10px;
+    position: absolute;
+    top: 10%;
+    left: 13%;
+}
+
+.content {
+    background-color: snow;
+    border-radius: 15px;
+    box-shadow: 5px 10px gray;
+    width: 90%;
+    position: absolute;
+}
+
+h2 {
+    font-family: var(--font-style);
+    font-size: 4vw;
+    color: silver;
+    -webkit-text-stroke: 2px black;
+}
+
+p {
+    font-family: var(--font-style);
+    font-size: 25px;
+}
+
+@keyframes float {
+    0% {
+        margin-bottom: 40px;
+    }
+    50% {
+        margin-bottom: 25px;
+    }
+    100% {
+        margin-bottom: 40px;
+    }
+}
