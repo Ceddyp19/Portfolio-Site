@@ -17,13 +17,14 @@
     <script defer src="/__/firebase/8.2.9/firebase-analytics.js"></script>
     <script defer src="/__/firebase/8.2.9/firebase-remote-config.js"></script>
     <script defer src="/__/firebase/8.2.9/firebase-performance.js"></script>
+    <link rel="stylesheet" href="me.css">
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
+    <!-- <style media="screen">
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
       #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
       #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
@@ -36,17 +37,49 @@
         body, #message { margin-top: 0; background: white; box-shadow: none; }
         body { border-top: 16px solid #ffa100; }
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <h1>This is a test</h1>
-    <div id="message">
+    <div id='heading'>
+      <img id='banner-img' src='banner.jpg' alt='profile picture'>
+      <h1 id='name'>Cedric Patton</h1>
+      <img id='profile-img' src='thatcoolguy.jpg' role='presentation'>
+  </div>
+  <div class='grid-container'>
+      <div id='about-me' class='section'>
+          <h2>About Me</h2>
+          <hr>
+          <p>
+              Full stack software developer with experience in Ruby and Javascript
+          frameworks. As a software engineer, I approach each problem from an analytical
+          perspective and embrace my natural curiosity on how things work. In addition to actively
+          coding to refine my developer skills I’m actively completing an IT certification to bring a depth to my
+          knowledge.
+          </p>
+      </div>
+      <div id='Projects' class='section'>
+          <h2>Technical Projects</h2>
+          <hr>
+          <p>This is the projects section</p>
+      </div>
+      <div id='Blog' class='section'>
+          <h2>Technical Blogs</h2>
+          <hr>
+          This is the blog section
+      </div>
+      <div id='Contact-info' class='section'>
+          <h2>Contact Info</h2>
+          <hr>
+          This is the contact me section
+      </div>
+  </div>
+    <!-- <div id="message">
       <h2>Welcome</h2>
       <h1>Firebase Hosting Setup Complete</h1>
       <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
       <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    </div> -->
+    <!-- <p id="load">Firebase SDK Loading&hellip;</p> -->
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -88,3 +121,6 @@
     </script>
   </body>
 </html>
+
+
+<!-- 'firebase serve' to launch localhost server and see website changes -->
