@@ -3,26 +3,26 @@
     /* --font-style: 'Akaya Telivigala', cursive; */
 }
 
-body{
+body {
     /* padding-left: 2%;
     padding-right: 2%; */
     background-color: rgb(134, 0, 0);
 }
 
-.nav{
+.nav {
     display: flex;
     justify-content: flex-end;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    max-height: 12%;
+    /* max-height: 15%; */
     background: silver;
     box-shadow: 0 2px 0 rgb(0 0 0 / 40%);
     z-index: 10;
 }
 
-.nav-list{
+.nav-list {
     display: flex;
     margin-right: 2rem;
 }
@@ -37,29 +37,37 @@ ul {
     padding-inline-start: 40px;
 }
 
-#heading{
+#heading {
     /* used to help overlap heading images and #name */
     position: relative;
 }
 
 #name {
     font-family: var(--font-style);
-    font-size: 8vw;
+    /* font-size: 8vw; */
     /* position: relative;
     left: 35%;
     bottom: 26vw; */
+
+
+    /* testing phase */
+    position: absolute;
+    top: 37%;
+    left: 35%;
     
+    text-align: center;
+}
 
-
-     /* testing phase */
-     position: absolute;
-     top: 42%;
-     left: 35%;
-
-  
-    background: -webkit-linear-gradient(#eee, rgb(170, 92, 92), rgb(134, 0, 0));
+#name span {
+    font-size: 8vw;
+    background: -webkit-linear-gradient(#eee, rgb(170, 92, 92), rgb(134, 0, 67));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+#name p {
+    font-size: 4vw;
+    color: snow;
 }
 
 #banner-img {
@@ -86,26 +94,22 @@ ul {
     /* position: relative;
     left: 15%;
     bottom: 46vw; */
-
-
     /* testing phase */
     position: absolute;
     top: 43%;
     left: 13%;
-  
 }
 
-.section{ 
+.section {
     background-color: silver;
     border-radius: 15px;
     text-align: center;
     position: relative;
-
-     /*gives space between heading and sections*/
+    /*gives space between heading and sections*/
     top: 5vw;
 }
 
-.grid-container{
+.grid-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: 10px;
