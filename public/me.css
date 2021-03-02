@@ -1,12 +1,16 @@
 :root {
-    --accent-color: rgb(99, 96, 96);
+    --accent-color: rgb(129, 129, 129);
+    --border-color: rgb(134, 0, 0);
+    --primary-color: rgb(27, 27, 199);
     /* --font-style: 'Akaya Telivigala', cursive; */
 }
 
 body {
     /* padding-left: 2%;
     padding-right: 2%; */
-    background-color: rgb(134, 0, 0);
+    /* background-color: rgb(134, 0, 0); */
+    background-color: rgb(0, 0, 0);
+
 }
 
 .nav {
@@ -17,9 +21,12 @@ body {
     left: 0;
     width: 100%;
     /* max-height: 15%; */
-    background: silver;
+    background: var(--border-color);
     box-shadow: 0 2px 0 rgb(0 0 0 / 40%);
+  
     z-index: 10;
+    padding-bottom: 1.5%;
+    padding-top: 1.5%;
 }
 
 .nav-list {
@@ -48,45 +55,43 @@ ul {
     /* position: relative;
     left: 35%;
     bottom: 26vw; */
-
-
     /* testing phase */
     position: absolute;
     top: 37%;
     left: 35%;
-    
     text-align: center;
 }
 
 #name span {
     font-size: 8vw;
-    background: -webkit-linear-gradient(#eee, rgb(170, 92, 92), rgb(134, 0, 67));
+    background: -webkit-linear-gradient(#eee, rgb(170, 92, 92), rgb(134, 0, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 #name p {
     font-size: 4vw;
-    color: snow;
+    color: silver;
 }
 
 #banner-img {
     grid-area: header;
-    max-width: 99%;
+    max-width: 95%;
     max-height: 500px;
-    /* position: relative; */
+    position: relative;
+    left: 2%;
     margin-top: 12%;
-    border-color: black;
+    border-color: var(--border-color);
     border-width: 8px;
     border-style: solid;
     animation-name: float;
     animation-duration: 2s;
     animation-iteration-count: 3;
-    margin-bottom: -40px;
 }
 
 #profile-img {
-    border-color: snow;
+    border-color: silver;
+    /* border-color: var(--border-color); */
     border-width: 3px;
     border-style: solid;
     width: 15%;
@@ -102,15 +107,27 @@ ul {
 
 .section {
     background-color: silver;
+
     border-radius: 15px;
     text-align: center;
     position: relative;
     /*gives space between heading and sections*/
-    top: 5vw;
+    top: 8vw;
+    margin-bottom: 10%;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: 10px;
+}
+
+#footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    background: var(--border-color);
+    margin-top: 15%;
 }
