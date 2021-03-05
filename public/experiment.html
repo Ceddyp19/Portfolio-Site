@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="experiment.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <title>Document</title>
+    <script type="text/javascript" src='experiment.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            class StickyNavigation {
+
+                constructor() {
+                    this.currentId = null;
+                    this.currentTab = null;
+                    this.tabContainerHeight = 70;
+                    let self = this;
+                    $('.et-hero-tab').click(function () {
+                        self.onTabClick(event, $(this));
+                    });
+                    $(window).scroll(() => { this.onScroll(); });
+                    $(window).resize(() => { this.onResize(); });
+                }
+
+                onTabClick(event, element) {
+                    event.preventDefault();
+                    let scrollTop = $(element.attr('href')).offset().top - this.tabContainerHeight + 1;
+                    $('html, body').animate({ scrollTop: scrollTop }, 600);
+                }
+
+                onScroll() {
+                    this.checkTabContainerPosition();
+                    this.findCurrentTabSelector();
+                }
+
+                onResize() {
+                    if (this.currentId) {
+                        this.setSliderCss();
+                    }
+                }
+
+                checkTabContainerPosition() {
+                    let offset = $('.et-hero-tabs').offset().top + $('.et-hero-tabs').height() - this.tabContainerHeight;
+                    if ($(window).scrollTop() > offset) {
+                        $('.et-hero-tabs-container').addClass('et-hero-tabs-container--top');
+                    }
+                    else {
+                        $('.et-hero-tabs-container').removeClass('et-hero-tabs-container--top');
+                    }
+                }
+
+                findCurrentTabSelector(element) {
+                    let newCurrentId;
+                    let newCurrentTab;
+                    let self = this;
+                    $('.et-hero-tab').each(function () {
+                        let id = $(this).attr('href');
+                        let offsetTop = $(id).offset().top - self.tabContainerHeight;
+                        let offsetBottom = $(id).offset().top + $(id).height() - self.tabContainerHeight;
+                        if ($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
+                            newCurrentId = id;
+                            newCurrentTab = $(this);
+                        }
+                    });
+                    if (this.currentId != newCurrentId || this.currentId === null) {
+                        this.currentId = newCurrentId;
+                        this.currentTab = newCurrentTab;
+                        this.setSliderCss();
+                    }
+                }
+
+                setSliderCss() {
+                    let width = 0;
+                    let left = 0;
+                    if (this.currentTab) {
+                        width = this.currentTab.css('width');
+                        left = this.currentTab.offset().left;
+                    }
+                    $('.et-hero-tab-slider').css('width', width);
+                    $('.et-hero-tab-slider').css('left', left);
+                }
+
+            }
+
+            new StickyNavigation();
+
+        });
+    </script>
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">
+</head>
+
+<body>
+    <!-- Hero -->
+    <section class="et-hero-tabs">
+        <h3>Hey I'm...</h3>
+        <h1>Cedric Patton JR</h1>
+        <h3>SOFTWARE ENGINEER - NETWORK ANALYST</h3>
+        <div class="et-hero-tabs-container">
+            <a class="et-hero-tab" href="#tab-about">About</a>
+            <a class="et-hero-tab" href="#tab-skills">Skills</a>
+            <a class="et-hero-tab" href="#tab-projects">Projects</a>
+            <a class="et-hero-tab" href="#tab-community">Community</a>
+            <a class="et-hero-tab" href="#tab-contact">Contact</a>
+            <span class="et-hero-tab-slider"></span>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <main class="et-main">
+        <section class="et-slide" id="tab-about">
+            <h1>About</h1>
+            <h3> Full stack software developer with experience in Ruby and Javascript
+                frameworks. As a software engineer, I approach each problem from an analytical
+                perspective and embrace my natural curiosity on how things work. In addition to actively
+                coding to refine my developer skills I’m actively completing an IT certification to bring a depth to my
+                knowledge.</h3>
+            <img src='thatcoolguy.jpg'>
+        </section>
+        <section class="et-slide" id="tab-skills">
+            <h1>Skills</h1>
+            <h3>Display Icons of skills</h3>
+            <!-- <span class="fab fa-bootstrap fa-7x"></span>
+            <span class="fab fa-html5 fa-7x"></span>
+            <span class="fab fa-js fa-7x"></span>
+            <span class='fab fa-node-js fa-7x'></span>
+            <span class='fab fa-npm fa-7x'></span>
+            <span class='fab fa-react fa-7x'></span> 
+            <span class='fab fa-css3-alt fa-7x'></span> -->
+            <i class="devicon-ruby-plain colored"></i>
+            <i class="devicon-nodejs-plain colored"></i>
+            <i class="devicon-rails-plain colored"></i>
+            <i class="devicon-bootstrap-plain colored"></i>
+            <i class="devicon-postgresql-plain colored"></i>
+            <i class="devicon-mongodb-plain colored"></i>
+            <i class="devicon-d3js-plain colored"></i>
+            <i class="devicon-react-original colored"></i>
+            <i class="devicon-jquery-plain colored"></i>
+            <i class="devicon-redux-original colored"></i>
+            <i class="devicon-sass-original colored"></i>
+            <i class="devicon-html5-plain colored"></i>
+            <i class="devicon-javascript-plain colored"></i>
+            <i class="devicon-git-plain colored"></i>
+            <i class="devicon-github-original colored"></i>
+            <i class="devicon-css3-plain colored"></i>
+        </section>
+        <section class="et-slide" id="tab-projects">
+            <h1>Projects</h1>
+            <h3>show projects here</h3>
+        </section>
+        <section class="et-slide" id="tab-community">
+            <h1>Community</h1>
+            <h3>Blogs coming soon...</h3>
+        </section>
+        <section class="et-slide" id="tab-contact">
+            <h1>Contact</h1>
+            <h3>Interested in Collabing or just have a question?</h3>
+            <!-- contact form -->
+            <div class="fcf-body">
+
+                <div id="fcf-form">
+                    <h3 class="fcf-h3">Let's Chat!</h3>
+
+                    <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+
+                        <div class="fcf-form-group">
+                            <label for="Name" class="fcf-label">Your name</label>
+                            <div class="fcf-input-group">
+                                <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="fcf-form-group">
+                            <label for="Email" class="fcf-label">Your email address</label>
+                            <div class="fcf-input-group">
+                                <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="fcf-form-group">
+                            <label for="Message" class="fcf-label">Your message</label>
+                            <div class="fcf-input-group">
+                                <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000"
+                                    required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="fcf-form-group">
+                            <button type="submit" id="fcf-button"
+                                class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+                        </div>
+
+                        <div class="fcf-credit" id="fcf-credit">
+                            Simple HTML email form provided by: <a href="https://www.freecontactform.com"
+                                target="_blank">FreeContactForm.com</a>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2021 Cedric Patton</p>
+    </footer>
+</body>
+
+</html>
