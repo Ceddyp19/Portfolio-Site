@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cedric Patton Portfolio Site</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <!-- <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-database.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-functions.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-storage.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-analytics.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-remote-config.js"></script>
+  <script defer src="/__/firebase/8.2.9/firebase-performance.js"></script> -->
+  <link rel="stylesheet" href="oldSiteVersion.css">
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+</head>
+
+<body>
+  <nav id='navbar' class='nav'>
+    <ul class='nav-list'>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#blogs">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div id='heading'>
+    <img id='banner-img' src='banner.jpg' alt='profile picture'>
+    <div id='name'>
+      <p>Hello, my name is<br>
+        <span>Cedric Patton</span><br>
+        and I'm a software engineer
+      </p>
+    </div>
+    <img id='profile-img' src='thatcoolguy.jpg' role='presentation'>
+  </div>
+  <!-- <div class='grid-container'> -->
+  <section id='about-me' class='section'>
+    <h2>About Me</h2>
+    <hr>
+    <p>
+      Full stack software developer with experience in Ruby and Javascript
+      frameworks. As a software engineer, I approach each problem from an analytical
+      perspective and embrace my natural curiosity on how things work. In addition to actively
+      coding to refine my developer skills I’m actively completing an IT certification to bring a depth to my
+      knowledge.
+    </p>
+  </section>
+  <section id='projects' class='section'>
+    <h2>Technical Projects</h2>
+    <hr>
+    <p>This is the projects section</p>
+  </section>
+  <section id='blogs' class='section'>
+    <h2>Technical Blogs</h2>
+    <hr>
+    This is the blog section
+  </section>
+  <section id='contact' class='section'>
+    <h2>Contact Info</h2>
+    <hr>
+    This is the contact me section
+  </section>
+  <!-- </div> -->
+  <footer id='footer'>This is the footer</footer>
+  <script>src= 'index.js'</script>
+</body>
+
+</html>
+
+
+<!-- 'firebase serve' to launch localhost server and see website changes -->
