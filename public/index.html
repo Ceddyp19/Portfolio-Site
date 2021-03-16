@@ -94,10 +94,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">
-     <!-- update the version number as needed -->
-  <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
-  <!-- include only the Firebase features as you need -->
-  <!-- <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <!-- <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
   <script defer src="/__/firebase/8.2.9/firebase-database.js"></script>
   <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
   <script defer src="/__/firebase/8.2.9/firebase-functions.js"></script>
@@ -172,19 +172,70 @@
         </section>
         <section class="et-slide" id="tab-projects">
             <h1>Projects</h1>
-            <div>
-                <h2>Travme</h2>
-                <img src="images/travme.png" alt="" id='travme'>
-                <p>
-                    Virtual Geo-Photo album geared towards those who frequently travel
-                </p>
-                <a href="https://github.com/Ceddyp19/TravMe-Frontend"><span
-                        class='fab fa-github-square fa-5x'></span></a>
-                <a href="https://www.youtube.com/watch?v=SpsIeUPqfAU"><span
-                        class='fab  fa-youtube-square fa-5x'></span></a>
+            <div class='projects-container'>
+                <!-- Travme App Still Need Maintence before being ready to display -->
+                <!-- ============================================================ -->
+                <!-- <div class='project' id='travme'>
+                    <h2>Travme</h2>
+                    <img src="images/travme.png" alt="" class='project-img'>
+                    <p>
+                        Virtual Geo-Photo Album
+                    </p>
+                    <a href="https://github.com/Ceddyp19/TravMe-Frontend"><span
+                            class='fab fa-github-square fa-5x'></span></a>
+                    <a href="https://www.youtube.com/watch?v=SpsIeUPqfAU"><span
+                            class='fab  fa-youtube-square fa-5x'></span></a>
 
+                    <a href="https://travme.netlify.app" target='_blank' disabled><span
+                            class='fa fa-laptop-code fa-5x'></span></a>
+                </div> -->
+
+                <div class='project' id='quote-machine'>
+                    <h2>Drum Pad</h2>
+                    <img src="images/drum-machine.png" alt="" class='project-img'>
+                    <p>
+                        Drum Pad with KeyBoard Inputs
+                    </p>
+                    <!-- <a href="https://github.com/Ceddyp19/TravMe-Frontend"><span
+                            class='fab fa-github-square fa-5x'></span></a>
+                    <a href="https://www.youtube.com/watch?v=SpsIeUPqfAU"><span
+                            class='fab  fa-youtube-square fa-5x'></span></a> -->
+
+                    <a href="https://mystifying-sammet-266dd7.netlify.app/" target='_blank'><span
+                            class='fa fa-laptop-code fa-5x'></span></a>
+                </div>
+
+                <div class='project' id='quote-machine'>
+                    <h2>Quote Machine</h2>
+                    <img src="images/quote-machine.png" alt="" class='project-img'>
+                    <p>
+                        Random Quote Generator
+                    </p>
+                    <!-- <a href="https://github.com/Ceddyp19/TravMe-Frontend"><span
+                            class='fab fa-github-square fa-5x'></span></a>
+                    <a href="https://www.youtube.com/watch?v=SpsIeUPqfAU"><span
+                            class='fab  fa-youtube-square fa-5x'></span></a> -->
+
+                    <a href="https://youthful-turing-5a7663.netlify.app/" target='_blank'><span
+                            class='fa fa-laptop-code fa-5x'></span></a>
+                </div>
+
+                <div class='project' id='markdown-previewer'>
+                    <h2>Markdoen Preview</h2>
+                    <img src="images/markdown-previewer.png" alt="" class='project-img'>
+                    <p>
+                        Markdown Editor with Preview
+                    </p>
+                    <!-- <a href="https://github.com/Ceddyp19/TravMe-Frontend"><span
+                            class='fab fa-github-square fa-5x'></span></a>
+                    <a href="https://www.youtube.com/watch?v=SpsIeUPqfAU"><span
+                            class='fab  fa-youtube-square fa-5x'></span></a> -->
+
+                    <a href="https://unruffled-heisenberg-d220f8.netlify.app/" target='_blank'><span
+                            class='fa fa-laptop-code fa-5x'></span></a>
+
+                </div>
             </div>
-
         </section>
         <section class="et-slide" id="tab-community">
             <h1>Community</h1>
@@ -201,42 +252,42 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-          const loadEl = document.querySelector('#load');
-          // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-          // // The Firebase SDK is initialized and available here!
-          //
-          // firebase.auth().onAuthStateChanged(user => { });
-          // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-          // firebase.firestore().doc('/foo/bar').get().then(() => { });
-          // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-          // firebase.messaging().requestPermission().then(() => { });
-          // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-          // firebase.analytics(); // call to activate
-          // firebase.analytics().logEvent('tutorial_completed');
-          // firebase.performance(); // call to activate
-          //
-          // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-    
-          try {
-            let app = firebase.app();
-            let features = [
-              'auth',
-              'database',
-              'firestore',
-              'functions',
-              'messaging',
-              'storage',
-              'analytics',
-              'remoteConfig',
-              'performance',
-            ].filter(feature => typeof app[feature] === 'function');
-            loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-          } catch (e) {
-            console.error(e);
-            loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-          }
+            const loadEl = document.querySelector('#load');
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            // // The Firebase SDK is initialized and available here!
+            //
+            // firebase.auth().onAuthStateChanged(user => { });
+            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+            // firebase.firestore().doc('/foo/bar').get().then(() => { });
+            // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+            // firebase.messaging().requestPermission().then(() => { });
+            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+            // firebase.analytics(); // call to activate
+            // firebase.analytics().logEvent('tutorial_completed');
+            // firebase.performance(); // call to activate
+            //
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+            } catch (e) {
+                console.error(e);
+                loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+            }
         });
-      </script>
+    </script>
 </body>
 
 </html>

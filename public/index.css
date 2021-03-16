@@ -128,7 +128,12 @@ a {
   height: auto;
 }
 
-#travme {
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-img {
   max-width: 30%;
   height: auto;
 }
