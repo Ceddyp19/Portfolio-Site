@@ -179,3 +179,12 @@ a {
   font-size: 2.5vw;
   color: aliceblue;
 }
+
+#bio {
+  letter-spacing: 1px;
+  font-size: 25px;
+}
+
+.et-hero-tabs-container{
+  background: #004683;
+}
