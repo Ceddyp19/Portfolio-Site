@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+
 body {
-  font-family: "Century Gothic", "Lato", sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  background: #004683;
 }
 
 a {
@@ -18,7 +22,7 @@ a {
   height: 100vh;
   position: relative;
   /* background: #eee; */
-  background-color: rgba(231, 231, 231, 0.308);
+  background-color: rgba(231, 231, 231, 0.185);
   background-blend-mode: screen;
   text-align: center;
   padding: 0 2em;
@@ -95,19 +99,23 @@ a {
 #tab-skills {
   border-color: black;
   border-width: 2%;
-  background-color: gray;
+  /* background-color: gray; */
+  background-color: silver;
 }
 
-#tab-about{
+#tab-about {
   background-color: silver;
 }
 
 #tab-projects {
-  background: #4e7392;
+  /* background: #4e7392; */
+  /* background-color: silver; */
+  background: #a4b0bb;
 }
 
 #tab-community {
-  background-color: gray;
+  /* background-color: gray; */
+  background-color: silver;
 }
 
 #tab-contact {
@@ -136,4 +144,38 @@ a {
 .project-img {
   max-width: 30%;
   height: auto;
+}
+
+
+#SE {
+  color: #004683;
+  font-size: 2.5vw;
+}
+
+#NA {
+  color: #66b1f1;
+  font-size: 2.5vw;
+  font-weight: 200;
+}
+
+#name {
+  font-weight: bolder;
+  font-size: 4vw;
+  background: rgba(105, 105, 105, 0.541);
+}
+
+#job-title {
+  background: black;
+  padding: 0px 22px 0px 22px;
+}
+
+#name-job {
+  display: grid;
+  row-gap: 0;
+  padding: 2px;
+}
+
+#divide{
+  font-size: 2.5vw;
+  color: aliceblue;
 }

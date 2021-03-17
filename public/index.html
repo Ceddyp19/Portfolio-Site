@@ -7,117 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-    <title>Document</title>
+    <title>Cedric Patton Portfolio Site</title>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-
-            class StickyNavigation {
-
-                constructor() {
-                    this.currentId = null;
-                    this.currentTab = null;
-                    this.tabContainerHeight = 70;
-                    let self = this;
-                    $('.et-hero-tab').click(function () {
-                        self.onTabClick(event, $(this));
-                    });
-                    $(window).scroll(() => { this.onScroll(); });
-                    $(window).resize(() => { this.onResize(); });
-                }
-
-                onTabClick(event, element) {
-                    event.preventDefault();
-                    let scrollTop = $(element.attr('href')).offset().top - this.tabContainerHeight + 1;
-                    $('html, body').animate({ scrollTop: scrollTop }, 600);
-                }
-
-                onScroll() {
-                    this.checkTabContainerPosition();
-                    this.findCurrentTabSelector();
-                }
-
-                onResize() {
-                    if (this.currentId) {
-                        this.setSliderCss();
-                    }
-                }
-
-                checkTabContainerPosition() {
-                    let offset = $('.et-hero-tabs').offset().top + $('.et-hero-tabs').height() - this.tabContainerHeight;
-                    if ($(window).scrollTop() > offset) {
-                        $('.et-hero-tabs-container').addClass('et-hero-tabs-container--top');
-                    }
-                    else {
-                        $('.et-hero-tabs-container').removeClass('et-hero-tabs-container--top');
-                    }
-                }
-
-                findCurrentTabSelector(element) {
-                    let newCurrentId;
-                    let newCurrentTab;
-                    let self = this;
-                    $('.et-hero-tab').each(function () {
-                        let id = $(this).attr('href');
-                        let offsetTop = $(id).offset().top - self.tabContainerHeight;
-                        let offsetBottom = $(id).offset().top + $(id).height() - self.tabContainerHeight;
-                        if ($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
-                            newCurrentId = id;
-                            newCurrentTab = $(this);
-                        }
-                    });
-                    if (this.currentId != newCurrentId || this.currentId === null) {
-                        this.currentId = newCurrentId;
-                        this.currentTab = newCurrentTab;
-                        this.setSliderCss();
-                    }
-                }
-
-                setSliderCss() {
-                    let width = 0;
-                    let left = 0;
-                    if (this.currentTab) {
-                        width = this.currentTab.css('width');
-                        left = this.currentTab.offset().left;
-                    }
-                    $('.et-hero-tab-slider').css('width', width);
-                    $('.et-hero-tab-slider').css('left', left);
-                }
-
-            }
-
-            new StickyNavigation();
-
-        });
-    </script>
+ 
+   <script src="./index.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">
-    <!-- update the version number as needed -->
     <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <!-- <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
-  <script defer src="/__/firebase/8.2.9/firebase-database.js"></script>
-  <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
-  <script defer src="/__/firebase/8.2.9/firebase-functions.js"></script>
-  <script defer src="/__/firebase/8.2.9/firebase-messaging.js"></script>
-  <script defer src="/__/firebase/8.2.9/firebase-storage.js"></script>
-  <script defer src="/__/firebase/8.2.9/firebase-analytics.js"></script>
-  <script defer src="/__/firebase/8.2.9/firebase-remote-config.js"></script>
-  <script defer src="/__/firebase/8.2.9/firebase-performance.js"></script> -->
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 </head>
 
 <body>
     <!-- Hero -->
     <section class="et-hero-tabs">
-        <h1>Cedric Patton JR</h1>
-        <h3>SOFTWARE ENGINEER - NETWORK ANALYST</h3>
+        <div id='name-job-container'>
+            <div id='name'>Cedric Patton JR</div>
+            <div id='job-title'><span id='SE'>SOFTWARE ENGINEER</span> <span id='divide'>|</span> <span id='NA'>NETWORK ANALYST</span></div>
+        </div>
         <div class="et-hero-tabs-container">
             <a class="et-hero-tab" href="#tab-about">About</a>
             <a class="et-hero-tab" href="#tab-skills">Skills</a>
@@ -134,9 +42,9 @@
             <h1>About</h1>
             <div class='about-container'>
                 <img src='images/thatcoolguy.jpg' id='pic'><br>
-                <a href="https://github.com/Ceddyp19"><span class='fab fa-github-square fa-5x'></span></a>
-                <a href="https://www.linkedin.com/in/cedric-patton-jr/"><span class='fab fa-linkedin fa-5x'></span></a>
-                <a href="https://cedricpattonjr.medium.com/"><span class='fab fa-medium fa-5x'></span></a>
+                <a href="https://github.com/Ceddyp19" target='_blank'><span class='fab fa-github-square fa-5x'></span></a>
+                <a href="https://www.linkedin.com/in/cedric-patton-jr/" target='_blank'><span class='fab fa-linkedin fa-5x'></span></a>
+                <a href="https://cedricpattonjr.medium.com/" target='_blank'><span class='fab fa-medium fa-5x'></span></a>
                 <h3 id='bio'> Full stack software developer with experience in Ruby and Javascript
                     frameworks. As a software engineer, I approach each problem from an analytical
                     perspective and embrace my natural curiosity on how things work. In addition to actively
